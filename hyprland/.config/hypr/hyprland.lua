@@ -75,11 +75,22 @@ hl.config({
 	general = {
 		gaps_in = 5,
 		gaps_out = 10,
-		border_size = 3,
+		border_size = 4,
+
+		col = {
+			-- active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			active_border = { colors = { "#ed8796", "#8aadf4" }, angle = 45 },
+			inactive_border = "rgba(595959aa)",
+		},
 	},
 	decoration = {
 		rounding = 10,
 		rounding_power = 2,
+
+		-- Change transparency of focused and unfocused windows.
+		active_opacity = 1.0,
+		inactive_opacity = 0.9,
+
 		shadow = {
 			enabled = true,
 			range = 4,
@@ -129,7 +140,7 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
 
 hl.bind(secondMod .. " + R", hl.dsp.exec_cmd("pkill -f quickshell; sleep 0.3; qs -c noctalia-shell & disown"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(secondMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o /home/sweetboopd/Pictures/"))
+hl.bind(secondMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o /home/$USER/Pictures/"))
 -- clipboard history (moved off ALT+V to avoid clash with float toggle below)
 hl.bind(secondMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 
@@ -144,6 +155,13 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+
+hl.bind(secondMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(secondMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Exit / shutdown
 hl.bind(

@@ -1,0 +1,11 @@
+env:
+  TERM: xterm-256-color
+
+window:
+  dimensions:
+    columns: 84
+    lines: 22
+
+  padding:
+    x: 8
+    y: 8
