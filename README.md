@@ -45,7 +45,7 @@ Please read the instructions for install to make it work properly.
 
   4. Run following.
 
-    ```
+    ```bash
 ```
     sudo system --user start hyprland-session.target
     sudo systemctl --user start is-active graphical-session.target
@@ -53,6 +53,8 @@ Please read the instructions for install to make it work properly.
     sudo systemctl --user start xdg-desktop-portal
     sudo systemctl --user is-active xdg-desktop-portal
     Expect: active
+    ```
+```
     ```
 
   5. Install dependencies
