@@ -20,43 +20,55 @@ Please read the instructions for install to make it work properly.
 ## Install 
   1. Base install on Fedora.
     
-    ```bash
+    ```
     sudo dnf cpor enable ashbuk/Hyprland-fedora
     sudo dnf install hyprland
     sudo dnf install xdg-desktop-portal-hyprland
     ```
   
   2. Post install for screensharing.
-    
-    ```bash
+
+    ```
     sudo systemctl --user edit --full --force hyprland-session.target
     ```
 
   3. Paste following
-    `[Unit]`
-    `Description=Hyprland session`  
-    `BindsTo=graphical-session.target` 
-    `Wants=graphical-session-pre.target`  
-    `After=graphical-session-pre.target`
-    `PropagatesStopTo=graphical-session.target`
+
+    ```
+    [Unit]
+    Description=Hyprland session
+    BindsTo=graphical-session.target
+    Wants=graphical-session-pre.target  
+    After=graphical-session-pre.target
+    PropagatesStopTo=graphical-session.target
+    ```
 
   4. Run following.
-    `sudo system --user start hyprland-session.target`
-    `sudo systemctl --user start is-active graphical-session.target`
+
+    ```
+```
+    sudo system --user start hyprland-session.target
+    sudo systemctl --user start is-active graphical-session.target
     Expect: active
-    `sudo systemctl --user start xdg-desktop-portal`
-    `sudo systemctl --user is-active xdg-desktop-portal`
+    sudo systemctl --user start xdg-desktop-portal
+    sudo systemctl --user is-active xdg-desktop-portal
     Expect: active
+    ```
 
   5. Install dependencies
-      sudo dnf install noctalia alacritty nautilus rofi stow zsh
+
+    ```
+    sudo dnf install noctalia alacritty nautilus rofi stow zsh
+    ```
 
   6. Clone dotfiles repo
-    ```bash
+    
+    ```
     git clone https://github.com/Metall-Moses/dotfiles.git
     ```
   7. Stow the configs
-    ```bash
+    
+    ```
     cd ~/dotfiles/
     stow hyprland alacritty wallpapers nvim
     ```
