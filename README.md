@@ -48,13 +48,11 @@ Please read the instructions for install to make it work properly.
   ```
   sudo system --user start hyprland-session.target
   sudo systemctl --user start is-active graphical-session.target
-```
   Expect: active
-```
   sudo systemctl --user start xdg-desktop-portal
   sudo systemctl --user is-active xdg-desktop-portal
-  ```
   Expect: active
+  ```
 
   5. Install dependencies
 
