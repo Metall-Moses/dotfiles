@@ -33,12 +33,12 @@ Please read the instructions for install to make it work properly.
     ```
 
   3. Paste following
-  `[Unit]`
-  `Description=Hyprland session`  
-  `BindsTo=graphical-session.target` 
-  `Wants=graphical-session-pre.target`  
-  `After=graphical-session-pre.target`
-  `PropagatesStopTo=graphical-session.target`
+    `[Unit]`
+    `Description=Hyprland session`  
+    `BindsTo=graphical-session.target` 
+    `Wants=graphical-session-pre.target`  
+    `After=graphical-session-pre.target`
+    `PropagatesStopTo=graphical-session.target`
 
   4. Run following.
     `sudo system --user start hyprland-session.target`
@@ -49,9 +49,8 @@ Please read the instructions for install to make it work properly.
     Expect: active
 
   5. Install dependencies
-    ```bash
-    sudo dnf install noctalia alacritty nautilus rofi stow zsh
-    ```
+      sudo dnf install noctalia alacritty nautilus rofi stow zsh
+
   6. Clone dotfiles repo
     ```bash
     git clone https://github.com/Metall-Moses/dotfiles.git
