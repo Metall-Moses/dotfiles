@@ -14,22 +14,25 @@ Please read the instructions for install to make it work properly.
 ## Tools
 - NeoVim
 - Alacritty
-- Hyprlock
 - Hyprshot
+- wf-recorder
 
 ## Install 
   1. Base install on Fedora.
     
   ```
-  sudo dnf cpor enable ashbuk/Hyprland-fedora
+  sudo dnf cpor enable lionheartp/Hyprland
   sudo dnf install hyprland
+
+  # Screensharing support 
   sudo dnf install xdg-desktop-portal-hyprland
+  sudo dnf install xdg-desktop-portal-gtk
   ```
   
   2. Post install for screensharing.
 
   ```
-  sudo systemctl --user edit --full --force hyprland-session.target
+  systemctl --user edit --full --force hyprland-session.target
   ```
 
   3. Paste following
@@ -46,18 +49,18 @@ Please read the instructions for install to make it work properly.
   4. Run following.
 
   ```
-  sudo system --user start hyprland-session.target
-  sudo systemctl --user start is-active graphical-session.target
+  systemctl --user start hyprland-session.target
+  systemctl --user is-active graphical-session.target
   Expect: active
-  sudo systemctl --user start xdg-desktop-portal
-  sudo systemctl --user is-active xdg-desktop-portal
+  systemctl --user start xdg-desktop-portal
+  systemctl --user is-active xdg-desktop-portal
   Expect: active
   ```
 
   5. Install dependencies
 
   ```
-  sudo dnf install noctalia alacritty nautilus rofi stow zsh
+  sudo dnf install noctalia alacritty nautilus rofi stow zsh cliphist hyprshot
   ```
 
   6. Clone dotfiles repo
@@ -74,7 +77,7 @@ Please read the instructions for install to make it work properly.
   8. Reboot
   
   ```
-  sudo reboot now`
+  sudo reboot now
   ```
 ### Dont forget to change shell to zsh
 
@@ -91,10 +94,10 @@ Please read the instructions for install to make it work properly.
   - Super + Space = Open app launcher
   - Super + B = Open Browser (Firefox)
   - Super + M = Open Music (Spotify if installed)
-  - Super + X = Hyprlock
   - Super 2 + S = Hyprshot
     - Screencap saved in ~/Pictures/
   - Super + Q = Close window
+  - Super + R = Screenrecording
 
   ### Navigation
   - Super + arrowkeys = Move between active windows
