@@ -30,6 +30,11 @@ hl.monitor({
 	scale = 1,
 	transform = 3,
 })
+hl.monitor({
+	output = "DP-1",
+	mode = "1920x1080",
+	position = "-1920x0",
+})
 
 ------------------
 ---- PROGRAMS ----
@@ -191,6 +196,9 @@ hl.workspace_rule({ workspace = "7", monitor = "DP-7", default = true, persisten
 hl.workspace_rule({ workspace = "8", monitor = "DP-5", default = true, persistent = true })
 hl.workspace_rule({ workspace = "9", monitor = "eDP-1", default = true, persistent = true })
 
+--hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true, persistent = true })
+--hl.workspace_rule({ workspace = "2", monitor = "DP-1", default = true, persistent = true })
+--hl.workspace_rule({ workspace = "3", monitor = "DP-1", default = true, persistent = true })
 -------------------------------
 ---- NOCTALIA SURFACE BLUR ----
 -------------------------------
