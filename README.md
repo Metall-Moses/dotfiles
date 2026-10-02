@@ -96,7 +96,7 @@ sudo dnf install noctalia alacritty nautilus rofi stow zsh cliphist hyprshot blu
 ```bash
 git clone https://github.com/Metall-Moses/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow hyprland alacritty wallpapers nvim tmux
+stow hyprland alacritty wallpapers nvim tmux recorder
 ```
 
 ### 5. Change shell to zsh

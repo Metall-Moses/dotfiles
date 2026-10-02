@@ -14,7 +14,7 @@ end)
 hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@144.00Hz",
-	position = "4520x0",
+	position = "0x0",
 	scale = 1,
 })
 hl.monitor({
@@ -32,6 +32,11 @@ hl.monitor({
 })
 hl.monitor({
 	output = "DP-1",
+	mode = "1920x1080",
+	position = "-1920x0",
+})
+hl.monitor({
+	output = "HDMI-A-1",
 	mode = "1920x1080",
 	position = "-1920x0",
 })
@@ -112,11 +117,11 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	--hl.exec_cmd("eval $(ssh-agent)")
 	--	hl.exec_cmd("steam")
-	hl.exec_cmd("vmware")
+	--hl.exec_cmd("vmware")
 	--hl.exec_cmd("obsidian")
-	hl.exec_cmd("blueman-manager")
+	--hl.exec_cmd("blueman-manager")
 	--DP-7	hl.exec_cmd("google-chrome")
-	--	hl.exec_cmd("flatpak run org.signal.Signal")
+	hl.exec_cmd("flatpak run org.signal.Signal")
 	hl.exec_cmd("discord")
 end)
 
